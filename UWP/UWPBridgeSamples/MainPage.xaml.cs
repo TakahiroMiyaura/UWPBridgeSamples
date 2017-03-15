@@ -107,7 +107,7 @@ namespace UWPBridgeSamples
 			OnResize();
 
             // Set Service.
-            UWPBridgeService.AddService<SetSampleText.ISetSampleTextService>(new SetSampleTextService());
+            UWPBridgeServiceManager.Instance.AddService<SetSampleText.ISetSampleTextService>(new SetSampleTextService());
 		}
 
 		private void OnResize()

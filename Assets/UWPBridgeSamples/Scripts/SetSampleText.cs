@@ -1,4 +1,6 @@
 ﻿// Copyright(c) 2017 Takahiro Miyaura
+// Released under the MIT license
+// http://opensource.org/licenses/mit-license.php
 
 using UnityEngine;
 
@@ -13,7 +15,7 @@ public class SetSampleText : MonoBehaviour
     private void Start()
     {
         // Initialize Service From UWP.
-        service = UWPBridgeService.GetService<ISetSampleTextService>();
+        service = UWPBridgeServiceManager.Instance.GetService<ISetSampleTextService>();
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class SetSampleText : MonoBehaviour
     }
 
     //ISetSampleTextService is interface for class create on UWP Project. 
-    public interface ISetSampleTextService : UWPBridgeService.IUWPBridgeService
+    public interface ISetSampleTextService : IUWPBridgeService
     {
         // Get string for 3DText.
         string GetText();
